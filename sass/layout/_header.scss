@@ -1,0 +1,215 @@
+.header-container {
+    background-color: $dark-moderate-cyan;
+    background-image: url('../images/mobile/image-header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 560px;
+
+    @media only screen and (min-width: $mediaTablet-640) {
+        height: 100vh;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 20px;
+        position: relative;
+    }
+
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon-menu {
+        display: block;
+        width: 25px;
+        height: 25px;
+        background-image: url('../images/icon-hamburger.svg');
+        background-size: inherit;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        opacity: 100%;
+        transform: rotate(0deg);
+        transition: 250ms;
+    }
+    
+    .mobile-menu {
+        display: none;
+        width:100%;
+        padding: 0 20px;
+        position: absolute;
+        top: 108px;
+        left: 0px;
+        animation: fade 250ms forwards ease-in;
+    }
+
+
+}
+
+.mobile-menu__container {
+    min-width: 335px;
+    width: 100%;
+    height: 335px;
+    background-color: $just-white;
+
+    &::before {
+        position: absolute;
+        top: -24px;
+        right: 20px;
+        clip-path: polygon(100% 0, 0 100%, 100% 100%);
+        content: '';
+        width: 25px;
+        height: 25px;
+        background-color: $just-white;
+    }
+
+    .mobile-links-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        list-style-type: none;
+    }
+
+        & a {
+            text-decoration: none;
+            color: $dark-grayish-blue;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: 400ms ease-out;
+        }
+
+            &:hover {
+                color: $dark-blue;
+            }
+        
+}
+
+.contact-style {
+    height: 60px;
+    width: 150px;
+    padding: 20px;
+    text-align: center;
+    color: $very-dark-desatured-blue;
+    background-color: $yellow;
+    font-family: $font-fraunces;
+    text-transform: uppercase;
+    border-radius: 30px 30px 30px 30px;
+    font-size: 1rem;
+    transition: 200ms ease-out;
+
+    &:hover {
+        background-color: hsla(168, 73%, 38%, 0.555);
+    }
+}
+
+
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h1 {
+        padding: 40px 20px;
+        font-family: $font-fraunces;
+        font-size: 2.4rem;
+        margin: 30px 0 10px 0;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: $just-white;
+    }
+
+    @media only screen and (min-width: $mediaTablet-640) {
+        font-size: 3.0rem;
+        margin: 60px 0 10px 0;
+    }
+}
+
+@media only screen and (min-width: $mediaDesktop-820) {
+    .hero-container h1{
+        display: flex;
+        margin: 30px 0 10px 0;
+        p {
+            font-size: 3rem;
+            letter-spacing: 8px;
+        
+            &:first-child::after {
+                content: " ";
+                white-space: pre;
+            }
+        }
+    }
+
+    .header-container{
+        height: 724px;
+        background-image: url('../images/desktop/image-header.jpg');
+
+        .nav-container{
+            .logo-container img {
+                width: 200px;
+                padding-left: 20px;
+            }
+
+            .icon-menu{
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block !important;
+                animation: none;
+                width: auto;
+                padding: 0;
+                position: inherit;
+                top: inherit;
+                left: inherit;
+            }
+
+            .mobile-menu__container{
+                height: auto;
+                background-color: transparent;
+                &::before{
+                    display: none;
+                }
+            }
+
+            .mobile-links-container {
+                flex-direction: row;
+                li {
+                    margin-left: 40px;
+                    a {
+                        color: $just-white;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        .contact-style {
+            background-color: $just-white;
+            &:hover {
+                color: $just-white;
+                background-color: hsla(168, 70%, 77%, 0.555);
+            }
+        }
+
+
+    @keyframes fade {
+        from{
+            opacity: 0%;
+        }
+        to{
+            opacity: 100%;
+        }
+    }
+}

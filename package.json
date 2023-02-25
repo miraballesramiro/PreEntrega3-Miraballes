@@ -1,0 +1,17 @@
+{
+  "name": "sunnyside-landing-page",
+  "version": "1.0.0",
+  "description": "Migrando proyecto a SASS",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "compile:sass": "node-sass sass/main.scss css/main.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miraballesramiro/PreEntrega3-Miraballes.git"
+  },
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
